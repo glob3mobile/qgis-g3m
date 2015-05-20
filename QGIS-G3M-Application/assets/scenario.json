@@ -1,0 +1,23 @@
+{
+    "Base layers": [
+        "CartoDB light"
+    ], 
+    "Deploy": {
+        "GeoServer password": "geoserver", 
+        "GeoServer url": "http://localhost:8080/geoserver", 
+        "GeoServer username": "admin", 
+        "GeoServer workspace": "mywebapp", 
+        "PostGIS database": "database", 
+        "PostGIS host": "localhost", 
+        "PostGIS password": "postgres", 
+        "PostGIS port": "5432", 
+        "PostGIS schema": "mywebapp", 
+        "PostGIS username": "postgres",
+        "G3M Cloud url": ""
+    },
+    "Settings": {
+    	"Extent": "Canvas extent", 
+    	"Title": "My Android App", 
+    	"Splash": "none"
+    }
+}
