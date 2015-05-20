@@ -29,10 +29,10 @@ import con.glob3mobile.g3m.qgis.R;
 
 
 public class MainActivity
-         extends
-            Activity
-         implements
-            ScenarioLoaderListener {
+extends
+Activity
+implements
+ScenarioLoaderListener {
 
    private static final String TAG      = "MainActivity";
    private G3MWidget_Android   _widgetAndroid;
@@ -54,8 +54,6 @@ public class MainActivity
       _builder.getPlanetRendererBuilder().setLayerSet(_lsParsed);
 
       _widgetAndroid = _builder.createWidget();
-      final ScenarioParser sp = new ScenarioParser();
-      sp.parseScenario(MainActivity.this, "file:///scenario.json", _widgetAndroid.getG3MContext());
 
 
       final RelativeLayout glob3Layout = (RelativeLayout) findViewById(R.id.glob3);
@@ -77,7 +75,8 @@ public class MainActivity
 
          @Override
          public void run(final G3MContext context) {
-
+            final ScenarioParser sp = new ScenarioParser();
+            sp.parseScenario(MainActivity.this, "file:///scenario.json", context);
          }
       };
       return initializationTask;
@@ -105,7 +104,7 @@ public class MainActivity
       for (int i = 0; i < layers.size(); i++) {
          final LayerData layer = layers.get(i);
 
-         final URLTemplateLayer layerTemplate = BaseLayers.getBaselLayerByName(layer.getName());
+         final URLTemplateLayer layerTemplate = BaseLayers.createBaseLayerByName(layer.getName());
 
          //         if (i != 0) {
          //            layerTemplate.setEnable(false);

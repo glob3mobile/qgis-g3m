@@ -10,7 +10,7 @@ import org.glob3.mobile.generated.URLTemplateLayer;
 public class BaseLayers {
 
 
-   public static URLTemplateLayer getBaselLayerByName(final String name) {
+   public static URLTemplateLayer createBaseLayerByName(final String name) {
 
 
       switch (name) {
@@ -35,6 +35,11 @@ public class BaseLayers {
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Open topo map":
+            return URLTemplateLayer.newMercator("http://s.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen watercolor":
             return URLTemplateLayer.newMercator("http://s.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
