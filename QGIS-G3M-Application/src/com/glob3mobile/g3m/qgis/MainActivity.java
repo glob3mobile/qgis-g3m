@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import org.glob3.mobile.generated.G3MContext;
 import org.glob3.mobile.generated.GInitializationTask;
 import org.glob3.mobile.generated.LayerSet;
-import org.glob3.mobile.generated.OSMLayer;
-import org.glob3.mobile.generated.TimeInterval;
 import org.glob3.mobile.generated.URLTemplateLayer;
 import org.glob3.mobile.specific.G3MBuilder_Android;
 import org.glob3.mobile.specific.G3MWidget_Android;
@@ -94,24 +92,26 @@ ScenarioLoaderListener {
    public void onScenarioRead(final Scenario scenario) {
       Log.d(TAG, "The parsed name of scenario:" + scenario.getName());
 
-      setBaseLayers(scenario.getLayers());
+      setBaseLayers(scenario.getBaseLayers());
 
       _waiting = true;
    }
 
 
    private void setBaseLayers(final ArrayList<LayerData> layers) {
+
+
       for (int i = 0; i < layers.size(); i++) {
          final LayerData layer = layers.get(i);
 
          final URLTemplateLayer layerTemplate = BaseLayers.createBaseLayerByName(layer.getName());
 
-         //         if (i != 0) {
-         //            layerTemplate.setEnable(false);
-         //         }
+         if (i != 0) {
+            layerTemplate.setEnable(false);
+         }
 
-         // _lsParsed.addLayer(layerTemplate);
-         _lsParsed.addLayer(new OSMLayer(TimeInterval.forever()));
+         _lsParsed.addLayer(layerTemplate);
+
       }
    }
 }
