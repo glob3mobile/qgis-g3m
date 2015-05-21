@@ -10,9 +10,15 @@ import org.glob3.mobile.generated.Sector;
 public class Scenario {
 
    private String               _name;
-   private Sector               _sector     = Sector.fullSphere();
-   private ArrayList<LayerData> _layers     = new ArrayList<LayerData>();
-   private ArrayList<LayerData> _baseLayers = new ArrayList<LayerData>();
+   private Sector               _sector        = Sector.fullSphere();
+   private ArrayList<LayerData> _layers        = new ArrayList<LayerData>();
+   private ArrayList<LayerData> _baseLayers    = new ArrayList<LayerData>();
+   private ArrayList<LayerData> _overlayLayers = new ArrayList<LayerData>();
+
+
+   public void setOverlayLayers(final ArrayList<LayerData> overlayLayers) {
+      _overlayLayers = overlayLayers;
+   }
 
 
    public String getName() {
@@ -57,5 +63,10 @@ public class Scenario {
 
    public void setBaseLayers(final ArrayList<LayerData> baseLayers) {
       _baseLayers = baseLayers;
+   }
+
+
+   public ArrayList<LayerData> getOverlayLayers() {
+      return _overlayLayers;
    }
 }

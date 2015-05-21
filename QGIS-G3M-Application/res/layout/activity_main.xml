@@ -7,22 +7,23 @@
         android:id="@+id/splash"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:visibility="visible" >
+        android:visibility="visible"
+        android:background="@android:color/white" >
 
-        <VideoView
-            android:id="@+id/video"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:clickable="false"
-            android:fitsSystemWindows="true"
-            android:scrollbars="none"             
-            />
+<!--         <VideoView -->
+<!--             android:id="@+id/video" -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="fill_parent" -->
+<!--             android:layout_alignParentBottom="true" -->
+<!--             android:layout_alignParentEnd="true" -->
+<!--             android:layout_alignParentLeft="true" -->
+<!--             android:layout_alignParentRight="true" -->
+<!--             android:layout_alignParentStart="true" -->
+<!--             android:layout_alignParentTop="true" -->
+<!--             android:clickable="false" -->
+<!--             android:fitsSystemWindows="true" -->
+<!--             android:scrollbars="none"              -->
+<!--             /> -->
 
         <ImageView
             android:id="@+id/default_image"
@@ -31,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@drawable/logo_g_512"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </RelativeLayout>
 
     <RelativeLayout

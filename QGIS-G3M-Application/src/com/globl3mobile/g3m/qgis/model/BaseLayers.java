@@ -2,6 +2,8 @@
 
 package com.globl3mobile.g3m.qgis.model;
 
+import org.glob3.mobile.generated.Layer;
+import org.glob3.mobile.generated.OSMLayer;
 import org.glob3.mobile.generated.Sector;
 import org.glob3.mobile.generated.TimeInterval;
 import org.glob3.mobile.generated.URLTemplateLayer;
@@ -10,7 +12,7 @@ import org.glob3.mobile.generated.URLTemplateLayer;
 public class BaseLayers {
 
 
-   public static URLTemplateLayer createBaseLayerByName(final String name) {
+   public static Layer createBaseLayerByName(final String name) {
 
 
       switch (name) {
@@ -20,6 +22,11 @@ public class BaseLayers {
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "CartoDB light without labels":
+            return URLTemplateLayer.newMercator("http://s.basemaps.cartocdn.com/light_nolabels/{level}/{x}/{y}.png", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "CartoDB without labels":
             return URLTemplateLayer.newMercator("http://s.basemaps.cartocdn.com/light_nolabels/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
@@ -40,144 +47,122 @@ public class BaseLayers {
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Stamen watercolor":
-            return URLTemplateLayer.newMercator("http://s.basemaps.cartocdn.com/dark_nolabels/{level}/{x}/{y}.png", //URL
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/watercolor/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen toner":
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen toner lite":
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-lite/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "OSM Mapnik":
+            return new OSMLayer(TimeInterval.fromDays(30));
+         case "MapQuest roads":
+            return URLTemplateLayer.newMercator("http://ttiles01.mqcdn.com/tiles/1.0.0/vy/map/{level}/{x}/{y}.png", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "MapQuest aerial":
+            return URLTemplateLayer.newMercator("http://ttiles01.mqcdn.com/tiles/1.0.0/vy/sat/{level}/{x}/{y}.png", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI world topo map":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI world street map":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI DeLorme world map":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI world imagery":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI world terrain":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI world shaded relief":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "ESRI NatGeo world map":
+            return URLTemplateLayer.newMercator(
+                     "http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{level}/{y}/{x}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "MapQuest labels":
+            return URLTemplateLayer.newMercator("http://ttiles01.mqcdn.com/tiles/1.0.0/vy/hyb/{level}/{x}/{y}.png", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen toner hybrid":
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-hybrid/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen toner lines":
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-lines/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Stamen toner labels":
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-labels/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "Hydda roads and labels":
+            return URLTemplateLayer.newMercator("http://s.tile.openstreetmap.se/hydda/roads_and_labels/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "OpenWeatherMap clouds":
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/map/clouds/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "OpenWeatherMap temperature":
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/clouds/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "OpenWeatherMap wind":
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/wind/{level}/{x}/{y}.jpg", //URL
+                     Sector.FULL_SPHERE,//SECTOR
+                     false,//TRANSPARENCY
+                     1, 18, TimeInterval.fromDays(30));
+         case "OpenWeatherMap press":
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/pressure_cntr/{level}/{x}/{y}.jpg", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          default:
             break;
       }
-
       return null;
    }
-
 }
-
-//
-///*CartoDB*/
-
-//
-///*Open topo map*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'Open topo map',
-//        source: new ol.source.XYZ({
-//                url: 'http://s.tile.opentopomap.org/{level}/{x}/{y}.png',
-//                attributions: [new ol.Attribution({ html: ['Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)']
-//                })]
-//        })
-//})
-//
-//
-///*Stamen watercolor*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'Stamen watercolor',
-//        source: new ol.source.Stamen({layer: 'watercolor'})
-//})
-//
-///*Stamen toner*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'Stamen toner',
-//        source: new ol.source.Stamen({layer: 'toner'})
-//})
-//
-///*Stamen toner lite*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'Stamen toner lite',
-//        source: new ol.source.Stamen({layer: 'toner-lite'})
-//})
-//
-///*OSM Mapnik*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'OSM Mapnik',
-//        source: new ol.source.OSM()
-//})
-//
-///*MapQuest roads*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'MapQuest roads',
-//        source: new ol.source.MapQuest({layer: 'osm'})
-//})
-//
-///*MapQuest aerial*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'MapQuest aerial',
-//        source: new ol.source.MapQuest({layer: 'sat'})
-//})
-//
-///*ESRI world topo map*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI world topo map',
-//        source: new ol.source.XYZ({
-//        attributions: [new ol.Attribution({ html:['Tiles &copy; <a href="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer">ArcGIS</a>']})],
-//        url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-///*ESRI world street map*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI world street map',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; <a href="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer">ArcGIS</a>']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-///*ESRI DeLorme world map*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI DeLorme world map',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; Esri &mdash; Copyright: &copy;2012 DeLorme']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-///*ESRI world imagery*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI world imagery',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-///*ESRI world terrain*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI world terrain',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; Esri &mdash; Source: USGS, Esri, TANA, DeLorme, and NPS']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-//
-///*ESRI world shaded relief*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI world shaded relief',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; Esri &mdash; Source: Esri']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})
-//
-///*ESRI NatGeo world map*/
-//new ol.layer.Tile({
-//        type: 'base',
-//        title: 'ESRI NatGeo world map',
-//        source: new ol.source.XYZ({
-//                attributions: [new ol.Attribution({ html:['Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC']})],
-//                url: 'http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{level}/{y}/{x}'
-//        })
-//})

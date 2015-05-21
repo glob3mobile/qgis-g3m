@@ -1,24 +1,65 @@
 {
     "Base layers": [
-        "CartoDB dark",
-        "CartoDB light"
+        "CartoDB without labels"
     ], 
     "Deploy": {
         "GeoServer password": "geoserver", 
         "GeoServer url": "http://localhost:8080/geoserver", 
         "GeoServer username": "admin", 
-        "GeoServer workspace": "mywebapp", 
+        "GeoServer workspace": "androidtest", 
         "PostGIS database": "database", 
         "PostGIS host": "localhost", 
         "PostGIS password": "postgres", 
         "PostGIS port": "5432", 
-        "PostGIS schema": "mywebapp", 
-        "PostGIS username": "postgres",
-        "G3M Cloud url": ""
-    },
+        "PostGIS schema": "androidtest", 
+        "PostGIS username": "postgres"
+    }, 
+    "Groups": {}, 
+    "Layers": [
+        {
+            "allowSelection": false, 
+            "clusterDistance": 0, 
+            "layer": "popp", 
+            "method": 0, 
+            "popup": "", 
+            "visible": true
+        }, 
+        {
+            "allowSelection": false, 
+            "clusterDistance": 0, 
+            "layer": "airports", 
+            "method": 0, 
+            "popup": "", 
+            "visible": true
+        }
+    ], 
     "Settings": {
-    	"Extent": "Canvas extent", 
-    	"Title": "My Android App", 
-    	"Splash": "none"
+        "Logo": "", 
+        "Theme": {
+            "Name": "android"
+        }, 
+        "Title": "androidTest"
+    }, 
+    "Widgets": {
+        "Layers list": {
+            "allowReordering": false, 
+            "showDownload": false, 
+            "showGroupContent": false, 
+            "showOpacity": false, 
+            "showZoomTo": false, 
+            "tipLabel": "Layers"
+        }, 
+        "Scale bar": {
+            "minWidth": 64, 
+            "units": "metric"
+        }, 
+        "Zoom controls": {
+            "delta": 1.2, 
+            "duration": 250, 
+            "zoomInLabel": "+", 
+            "zoomInTipLabel": "Zoom in", 
+            "zoomOutLabel": "-", 
+            "zoomOutTipLabel": "Zoom out"
+        }
     }
 }

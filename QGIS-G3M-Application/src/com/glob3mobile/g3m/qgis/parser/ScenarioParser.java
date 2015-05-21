@@ -16,8 +16,8 @@ import org.glob3.mobile.generated.TimeInterval;
 import org.glob3.mobile.generated.URL;
 
 import com.globl3mobile.g3m.qgis.model.LayerData;
-import com.globl3mobile.g3m.qgis.model.Scenario;
 import com.globl3mobile.g3m.qgis.model.LayerData.type;
+import com.globl3mobile.g3m.qgis.model.Scenario;
 
 
 public class ScenarioParser {
@@ -64,6 +64,22 @@ public class ScenarioParser {
             }
 
             scenario.setBaseLayers(baseLayersArray);
+
+            final JSONArray overlayLayers = scenarioListObject.getAsArray("Overlay layers");
+
+            if (overlayLayers != null) {
+               final ArrayList<LayerData> overlayLayersArray = new ArrayList<LayerData>();
+
+               for (int i = 0; i < overlayLayers.size(); i++) {
+                  final LayerData ld = new LayerData();
+                  ld.setType(type.templateLayer);
+                  ld.setName(overlayLayers.getAsString(i).value());
+                  overlayLayersArray.add(ld);
+               }
+
+               scenario.setOverlayLayers(overlayLayersArray);
+            }
+
 
             //            final String response = buffer.getAsString();
             //            final JSONObject scenarioListObject = IJSONParser.instance().parse(response, false).asObject();
