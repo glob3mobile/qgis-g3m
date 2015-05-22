@@ -427,6 +427,7 @@ class MainDialog(QDialog, Ui_MainDialog):
         appdef = {}
         appdef["Settings"] = self.getSettings()
         appdef["Base layers"] = self.getBaseLayers()
+        appdef["Overlay layers"] = self.getOverlayLayers()
         appdef["Layers"] = layers
         if preview:
             for layer in layers:
@@ -448,6 +449,10 @@ class MainDialog(QDialog, Ui_MainDialog):
         for b in self.baseLayers:
             if b.isChecked():
                 layers.append(self.baseLayers[b])
+        return layers
+
+    def getOverlayLayers(self):
+        layers = []
         for b in self.baseOverlays:
             if b.isChecked():
                 layers.append(self.baseOverlays[b])
@@ -530,6 +535,15 @@ class MainDialog(QDialog, Ui_MainDialog):
             self.tabPanel.setCurrentIndex(5)
             raise e
 
+        canvas = iface.mapCanvas()
+        canvasCrs = canvas.mapSettings().destinationCrs()
+        transform = QgsCoordinateTransform(canvasCrs, QgsCoordinateReferenceSystem("EPSG:3857"))
+        try:
+            extent = transform.transform(canvas.extent())
+        except QgsCsException:
+            extent = QgsRectangle(-20026376.39, -20048966.10, 20026376.39,20048966.10)
+
+        parameters["CanvasExtent"] = extent
         return parameters
 
     def getLayersAndGroups(self):
