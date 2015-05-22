@@ -54,7 +54,7 @@ def tempFilenameInTempFolder(basename):
     return filename
 
 def exportLayers(layers, folder, progress, precision):
-    epsg3587 = QgsCoordinateReferenceSystem("EPSG:3857")
+    epsg4326 = QgsCoordinateReferenceSystem("EPSG:4326")
     layersFolder = os.path.join(folder, "layers")
     QDir().mkpath(layersFolder)
     reducePrecision = re.compile(r"([0-9]+\.[0-9]{%i})([0-9]+)" % precision)
@@ -65,7 +65,7 @@ def exportLayers(layers, folder, progress, precision):
             layer = appLayer.layer
             if layer.type() == layer.VectorLayer:
                 path = os.path.join(layersFolder, "lyr_%s.js" % safeName(layer.name()))
-                QgsVectorFileWriter.writeAsVectorFormat(layer,  path, "utf-8", epsg3587, 'GeoJson')
+                QgsVectorFileWriter.writeAsVectorFormat(layer,  path, "utf-8", epsg4326, 'GeoJson')
                 with open(path) as f:
                     lines = f.readlines()
                 with open(path, "w") as f:
