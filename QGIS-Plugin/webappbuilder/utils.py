@@ -69,7 +69,7 @@ def exportLayers(layers, folder, progress, precision):
                 with open(path) as f:
                     lines = f.readlines()
                 with open(path, "w") as f:
-                    f.write("var %s = " % ("geojson_" + safeName(layer.name())))
+                    #f.write("var %s = " % ("geojson_" + safeName(layer.name())))
                     for line in lines:
                         line = reducePrecision.sub(r"\1", line)
                         line = line.strip("\n\t ")
