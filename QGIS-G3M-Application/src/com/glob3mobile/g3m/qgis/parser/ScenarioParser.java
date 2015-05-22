@@ -81,6 +81,22 @@ public class ScenarioParser {
             }
 
 
+            final JSONArray vectorLayers = scenarioListObject.getAsArray("Layers");
+            if (vectorLayers != null) {
+
+               final ArrayList<LayerData> vectorLayersArray = new ArrayList<LayerData>();
+
+               for (int i = 0; i < vectorLayers.size(); i++) {
+                  final JSONObject vectorialLayerObject = vectorLayers.getAsObject(i);
+                  final LayerData ld = new LayerData();
+                  ld.setType(type.vectorial);
+                  ld.setName(vectorialLayerObject.getAsString("layer", ""));
+                  vectorLayersArray.add(ld);
+
+               }
+               scenario.setLayers(vectorLayersArray);
+            }
+
             //            final String response = buffer.getAsString();
             //            final JSONObject scenarioListObject = IJSONParser.instance().parse(response, false).asObject();
             //
