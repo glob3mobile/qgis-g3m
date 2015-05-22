@@ -411,13 +411,13 @@ class MainDialog(QDialog, Ui_MainDialog):
         ftp = FTP(url, 'qgis', 'qgis')
         utils.chdir("ftp-box/g3m-qgis/%s" % appName, ftp)
         #ftp.cwd("ftp-box/g3m-qgis/%s" % appName)
-        with open(appdefFile, 'r') as f:
-            ftp.storlines('STOR ' + appName + ".json", f)
+        with open(appdefFile, 'rb') as f:
+            ftp.storbinary('STOR ' + appName + ".json", f)
         utils.chdir("layers", ftp)
         for layer in appdef["Layers"]:
             layerName = utils.safeName(layer.layer)
-            with open(folder + "/layers/lyr_%s.js" % layerName, 'r') as f:
-                ftp.storlines('STOR ' + layerName + ".json", f)
+            with open(folder + "/layers/lyr_%s.js" % layerName, 'rb') as f:
+                ftp.storbinary('STOR ' + layerName + ".json", f)
 
 
 
