@@ -540,8 +540,9 @@ class MainDialog(QDialog, Ui_MainDialog):
         transform = QgsCoordinateTransform(canvasCrs, QgsCoordinateReferenceSystem("EPSG:3857"))
         try:
             extent = transform.transform(canvas.extent())
+            extent = (extent.xMinimum(), extent.xMaximum(), extent.yMinimum(), extent.yMaximum())
         except QgsCsException:
-            extent = QgsRectangle(-20026376.39, -20048966.10, 20026376.39,20048966.10)
+            extent = (-20026376.39, -20048966.10, 20026376.39,20048966.10)
 
         parameters["CanvasExtent"] = extent
         return parameters
