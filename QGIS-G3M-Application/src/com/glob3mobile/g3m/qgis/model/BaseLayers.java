@@ -1,6 +1,6 @@
 
 
-package com.globl3mobile.g3m.qgis.model;
+package com.glob3mobile.g3m.qgis.model;
 
 import org.glob3.mobile.generated.Layer;
 import org.glob3.mobile.generated.OSMLayer;

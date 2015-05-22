@@ -15,9 +15,9 @@ import org.glob3.mobile.generated.JSONObject;
 import org.glob3.mobile.generated.TimeInterval;
 import org.glob3.mobile.generated.URL;
 
-import com.globl3mobile.g3m.qgis.model.LayerData;
-import com.globl3mobile.g3m.qgis.model.LayerData.type;
-import com.globl3mobile.g3m.qgis.model.Scenario;
+import com.glob3mobile.g3m.qgis.model.LayerData;
+import com.glob3mobile.g3m.qgis.model.Scenario;
+import com.glob3mobile.g3m.qgis.model.LayerData.type;
 
 
 public class ScenarioParser {

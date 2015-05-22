@@ -26,11 +26,11 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.glob3mobile.g3m.qgis.model.BaseLayers;
+import com.glob3mobile.g3m.qgis.model.LayerData;
+import com.glob3mobile.g3m.qgis.model.Scenario;
 import com.glob3mobile.g3m.qgis.parser.ScenarioLoaderListener;
 import com.glob3mobile.g3m.qgis.parser.ScenarioParser;
-import com.globl3mobile.g3m.qgis.model.BaseLayers;
-import com.globl3mobile.g3m.qgis.model.LayerData;
-import com.globl3mobile.g3m.qgis.model.Scenario;
 
 import con.glob3mobile.g3m.qgis.R;
 

@@ -1,6 +1,6 @@
 
 
-package com.globl3mobile.g3m.qgis.model;
+package com.glob3mobile.g3m.qgis.model;
 
 public class LayerData {
    private String _name;
