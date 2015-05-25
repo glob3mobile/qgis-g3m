@@ -121,42 +121,42 @@ public class BaseLayers {
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Stamen toner hybrid":
-            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-hybrid/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-hybrid/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Stamen toner lines":
-            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-lines/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-lines/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Stamen toner labels":
-            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-labels/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://c.tile.stamen.com/toner-labels/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "Hydda roads and labels":
-            return URLTemplateLayer.newMercator("http://s.tile.openstreetmap.se/hydda/roads_and_labels/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://s.tile.openstreetmap.se/hydda/roads_and_labels/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "OpenWeatherMap clouds":
-            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/map/clouds/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/map/clouds/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "OpenWeatherMap temperature":
-            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/clouds/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/clouds/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "OpenWeatherMap wind":
-            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/wind/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/wind/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
          case "OpenWeatherMap press":
-            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/pressure_cntr/{level}/{x}/{y}.jpg", //URL
+            return URLTemplateLayer.newMercator("http://s.tile.openweathermap.org/temp/pressure_cntr/{level}/{x}/{y}.png", //URL
                      Sector.FULL_SPHERE,//SECTOR
                      false,//TRANSPARENCY
                      1, 18, TimeInterval.fromDays(30));
